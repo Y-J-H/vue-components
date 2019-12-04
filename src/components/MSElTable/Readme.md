@@ -43,18 +43,18 @@ export default {
       {
         risk_id: 1303,
         risk_name: 'Apache Tomcat样例目录session操纵漏洞',
-        risk_addr: "http://114.115.184.49:8001/examples/servlets/servlet/SessionExample",
+        risk_addr: "http://192.168.1.1:8001/examples/servlets/servlet",
         location: '中国-北京-北京市',
         detect_status: '检测成功',
-        insert_tm: '2019-11-15 22:40:14'
+        insert_tm: '2019-10-15 22:40:14'
       },
       {
         risk_id: 5786,
         risk_name: 'Redis弱口令漏洞',
-        risk_addr: "114.115.184.49:3307",
+        risk_addr: "1.1.1.1",
         location: '中国-北京-北京市',
         detect_status: '检测成功',
-        insert_tm: '2019-11-08 22:40:00'
+        insert_tm: '2019-10-08 22:40:00'
       }
     ]
     this.columns = [
