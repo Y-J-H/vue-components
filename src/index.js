@@ -1,6 +1,6 @@
-import MoanElTable from './components/MoanElTable/index.js'
+import MSElTable from './components/MSElTable/index.js'
 
-const components = [MoanElTable]
+const components = [MSElTable]
 
 const install = Vue => {
   components.forEach(component => {
@@ -28,5 +28,5 @@ if (GlobalVue) {
 
 export default {
   install,
-  MoanElTable
+  MSElTable
 }
