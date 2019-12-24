@@ -1,6 +1,6 @@
 {
-  "name": "moan-el-te",
-  "version": "1.0.5",
+  "name": "@moresec/vue-components",
+  "version": "1.0.0",
   "description": "",
   "main": "dist/moan.min.js",
   "scripts": {
