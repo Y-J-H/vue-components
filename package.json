@@ -13,7 +13,7 @@
   },
   "keywords": [],
   "author": "YJH <m17854239497@outlook.com>",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.2.2",
