@@ -51,6 +51,9 @@
     "webpack-bundle-analyzer": "3.3.2",
     "webpack-cli": "^3.3.10"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
