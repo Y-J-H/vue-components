@@ -54,6 +54,11 @@
   "publishConfig": {
     "access": "public"
   },
+  "files": [
+    "dist",
+    "README.md",
+    "package.json"
+  ],
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
