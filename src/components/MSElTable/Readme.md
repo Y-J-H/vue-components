@@ -2,7 +2,7 @@
 
 ```vue
 <template>
-  <moan-el-table
+  <ms-el-table
     :table-data="tableData"
     @selection-change="handleSelectionChange"
     @sort-change="handleSortChange"
@@ -13,7 +13,7 @@
     <template v-slot:noData>
       <span>暂无数据</span>
     </template>
-  </moan-el-table>
+  </ms-el-table>
 </template>
 
 <script>
@@ -83,6 +83,7 @@ export default {
       },
       {
         name: '地理位置',
+        hidden: true,
         attrs: {
           label: '地理位置',
           showOverflowTooltip: true,

@@ -1,5 +1,5 @@
 export default {
-  name: 'MSElTable',
+  name: 'MsElTable',
   props: {
     /**
      *  表格列的配置描述, 列的格式为{ name: '列名称', attrs: '属性' } 其中attrs中包含Table-column中所有的属性

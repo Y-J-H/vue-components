@@ -1,6 +1,6 @@
-import MSElTable from './components/MSElTable/index.js'
+import MsElTable from './components/MsElTable/index.js'
 
-const components = [MSElTable]
+const components = [MsElTable]
 
 const install = Vue => {
   components.forEach(component => {
@@ -28,5 +28,5 @@ if (GlobalVue) {
 
 export default {
   install,
-  MSElTable
+  MsElTable
 }
