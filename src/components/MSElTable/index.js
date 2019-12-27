@@ -2,7 +2,7 @@ export default {
   name: 'MsElTable',
   props: {
     /**
-     *  表格列的配置描述, 列的格式为{ name: '列名称', attrs: '属性' } 其中attrs中包含Table-column中所有的属性
+     *  表格列的配置描述, 列的格式为{ name: '列名称', attrs: '属性', hidden: '是否隐藏'(默认false) } 其中attrs中包含Table-column中所有的属性
      */
     columns: {
       type: Array,
@@ -90,8 +90,10 @@ export default {
             on: this.$listeners
           }}
         >
-          {this.columns.map(column => renderTableColumns(column))}(
-          {/* @slot 暂无数据展示 */}
+          {this.columns.map(
+            column => !column.hidden && renderTableColumns(column)
+          )}
+          ({/* @slot 暂无数据展示 */}
           <slot name="noData"></slot>)
         </el-table>
         {isShowPagination && (
