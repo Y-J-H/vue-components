@@ -1,6 +1,6 @@
 {
   "name": "@moresec/vue-components",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "dist/moan.min.js",
   "scripts": {
