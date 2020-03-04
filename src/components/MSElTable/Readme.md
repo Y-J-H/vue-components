@@ -10,8 +10,8 @@
     :columns="columns"
     :table-pagination="tablePagination"
     :pagination="pagination">
-    <template v-slot:noData>
-      <span>暂无数据</span>
+    <template v-slot:empty>
+      <span>自定义 暂无数据</span>
     </template>
   </ms-el-table>
 </template>

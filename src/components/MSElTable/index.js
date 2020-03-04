@@ -79,6 +79,7 @@ export default {
       pageSize,
       total
     })
+    const { empty } = this.$slots
     return (
       <div class="table_wrap">
         <el-table
@@ -93,8 +94,7 @@ export default {
           {this.columns.map(
             column => !column.hidden && renderTableColumns(column)
           )}
-          ({/* @slot 暂无数据展示 */}
-          <slot name="noData"></slot>)
+          ({/* @slot 暂无数据展示 */}){<div slot="empty">{empty}</div>}
         </el-table>
         {isShowPagination && (
           <el-pagination
