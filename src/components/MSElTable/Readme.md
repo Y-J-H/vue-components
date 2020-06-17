@@ -41,20 +41,20 @@ export default {
   created() {
     this.tableData = [
       {
-        risk_id: 1303,
-        risk_name: 'Apache Tomcat样例目录session操纵漏洞',
-        risk_addr: "http://192.168.1.1:8001/examples/servlets/servlet",
+        id: 1,
+        name: '名称01',
+        addr: "http://1.1.2.3",
         location: '中国-北京-北京市',
-        detect_status: '检测成功',
-        insert_tm: '2019-10-15 22:40:14'
+        status: '检测成功',
+        insert_tm: '2019-09-12 22:20:14'
       },
       {
-        risk_id: 5786,
-        risk_name: 'Redis弱口令漏洞',
-        risk_addr: "1.1.1.1",
-        location: '中国-北京-北京市',
-        detect_status: '检测成功',
-        insert_tm: '2019-10-08 22:40:00'
+        id: 2,
+        name: '名称02',
+        addr: "1.1.1.1",
+        location: '中国-浙江省-杭州市',
+        status: '检测成功',
+        insert_tm: '2019-9-08 2:40:00'
       }
     ]
     this.columns = [
@@ -66,19 +66,19 @@ export default {
         }
       },
       {
-        name: '风险名称',
+        name: '名称',
         attrs: {
-          label: '风险名称',
+          label: '名称',
           showOverflowTooltip: true,
-          prop: 'risk_name'
+          prop: 'name'
         }
       },
       {
-        name: '风险地址',
+        name: '地址',
         attrs: {
-          label: '风险地址',
+          label: '地址',
           showOverflowTooltip: true,
-          prop: 'risk_addr'
+          prop: 'addr'
         }
       },
       {
@@ -91,10 +91,10 @@ export default {
         }
       },
       {
-        name: '检测状态',
+        name: '状态',
         attrs: {
-          label: '检测状态',
-          prop: 'detect_status',
+          label: '状态',
+          prop: 'status',
           width: '110px',
           showOverflowTooltip: true,
           filterMultiple: false,
@@ -103,9 +103,9 @@ export default {
         },
         scopeSlots: {
           default: props => {
-            const { detect_status } = props.row
+            const { status } = props.row
             const currentText = DETECTION_STATUS.find(item => {
-              return item.value === detect_status
+              return item.value === status
             })['text']
             return (
               <div>
@@ -133,7 +133,7 @@ export default {
         },
         scopedSlots: {
           default: props => {
-            const { risk_id } = props.row
+            const { id } = props.row
             /**
              *  在 babel-plugin-transform-vue-jsx 插件低于3.4的版本的时候需要加上下面这句话,不过现在应该使用的是4.0.1
              *  也需要加上,不然在element-ui渲染的时候就会报错,不清楚原因, 在项目中这句话不需要写
@@ -143,7 +143,7 @@ export default {
               <div>
                 <el-button
                   type="text"
-                  onClick={() => this.showDetail(risk_id)}
+                  onClick={() => this.showDetail(id)}
                 >
                   查看详情
                 </el-button>

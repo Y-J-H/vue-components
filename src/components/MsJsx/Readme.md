@@ -7,55 +7,55 @@
 
 ```vue
 <template>
-  <ms-jsx :params="riskData" :render="renderRiskOpt"></ms-jsx>
+  <ms-jsx :params="paramsData" :render="renderFun"></ms-jsx>
 </template>
 
 <script>
-/* 更改不同的detect_status,和risk_process 页面上的风险处理有不一样的展示 */
+/* 更改不同的status,和process 页面上的处理有不一样的展示 */
   export default {
     data() {
       return {
-        riskData: {
-          risk_id: 1,
-          detect_status: 'SUCCESS', // SUCCESS | DETECTING
-          risk_process: 'CONFIRMED'  // 'NEW'| 'CONFIRMED' | 'IGNORED'
+        paramsData: {
+          id: 1,
+          status: 'SUCCESS', // SUCCESS | DETECTING
+          process: 'CONFIRMED'  // 'NEW'| 'CONFIRMED' | 'IGNORED'
         }
       }
     },
     methods: {
-      renderRiskOpt(h, row) {
-        const { risk_id, detect_status, risk_process } = row
-        return detect_status === 'DETECTING' ? (
+      renderFun(h, row) {
+        const { id, status, process } = row
+        return status === 'DETECTING' ? (
           <span class="el-dropdown-link grey">
-            风险处理<i class="el-icon-arrow-down el-icon--right"></i>
+            处理<i class="el-icon-arrow-down el-icon--right"></i>
           </span>
         ) : (
           <el-dropdown
           trigger="click"
-          onCommand={command => this.handleCommand(command, risk_id)}>
+          onCommand={command => this.handleCommand(command, id)}>
             <span class="el-dropdown-link blue">
-              风险处理<i class="el-icon-arrow-down el-icon--right"></i>
+              处理<i class="el-icon-arrow-down el-icon--right"></i>
             </span>
             <el-dropdown-menu slot="dropdown">
-              {risk_process === "IGNORED" ? (
+              {process === "IGNORED" ? (
                 <el-dropdown-item command="CANCEL_IGNORE">取消忽略</el-dropdown-item>
               ) : (
                 <div>
                   <el-dropdown-item command={
-                      risk_process === "CONFIRMED" ? "CANCEL_CONFIRM" : "CONFIRM"
+                      process === "CONFIRMED" ? "CANCEL_CONFIRM" : "CONFIRM"
                     }>{
-                      risk_process === "CONFIRMED" ? "取消确认" : "确认风险"
+                      process === "CONFIRMED" ? "取消确认" : "确认"
                     }
                   </el-dropdown-item>
-                  <el-dropdown-item command="IGNORE">忽略风险</el-dropdown-item>
+                  <el-dropdown-item command="IGNORE">忽略</el-dropdown-item>
                 </div>
               )}
             </el-dropdown-menu>
           </el-dropdown>
         )
       },
-      handleCommand(command, risk_id) {
-        console.log(command, risk_id)
+      handleCommand(command, id) {
+        console.log(command, id)
       }
     }
   }
